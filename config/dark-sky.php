@@ -43,4 +43,19 @@ return [
 
     'lang' => 'en',
 
+    /*
+    |--------------------------------------------------------------------------
+    | Units
+    |--------------------------------------------------------------------------
+    |
+    | Use this option to set the units for weather meteorological conditions.
+    | You can choose from the number of the most widely-used unit systems.
+    | Or just use the auto selection, based on the geographic location.
+    |
+    | Supported: "auto", "ca", "uk2", "us", "si".
+    |
+    */
+
+    'units' => 'auto',
+
 ];
