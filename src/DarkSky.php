@@ -20,9 +20,9 @@ class DarkSky
         $this->extend = config('dark-sky.extend');
     }
 
-    public function lang($language)
+    public function lang($lang)
     {
-        $this->lang = $language;
+        $this->lang = $lang;
 
         return $this;
     }
