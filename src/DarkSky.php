@@ -15,7 +15,7 @@ class DarkSky
 
     protected function url($time = null)
     {
-        $key = config('dark-api.key');
+        $key = config('dark-sky.key');
 
         $latitude = $this->latitude;
         $longitude = $this->longitude;
