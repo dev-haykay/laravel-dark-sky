@@ -26,5 +26,15 @@
         "classmap": [
             "tests/DarkSky/TestCase.php"
         ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Illuminated\\DarkSky\\ServiceProvider"
+            ],
+            "aliases": {
+                "DarkSky": "Illuminated\\DarkSky\\DarkSky"
+            }
+        }
     }
 }
