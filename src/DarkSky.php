@@ -6,11 +6,18 @@ class DarkSky
 {
     protected $latitude;
     protected $longitude;
+    protected $extend;
 
     public function __construct($latitude, $longitude)
     {
         $this->latitude = (float) $latitude;
         $this->longitude = (float) $longitude;
+        $this->extend = config('dark-sky.extend');
+    }
+
+    public function extend($blocks = 'hourly')
+    {
+        $this->extend = $blocks;
     }
 
     protected function url($time = null)
