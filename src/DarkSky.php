@@ -6,24 +6,18 @@ class DarkSky
 {
     protected $latitude;
     protected $longitude;
-    protected $extend;
     protected $lang;
     protected $units;
+    protected $extend;
 
     public function __construct($latitude, $longitude)
     {
         $this->latitude = (float) $latitude;
         $this->longitude = (float) $longitude;
-        $this->extend = config('dark-sky.extend');
+
         $this->lang = config('dark-sky.lang');
         $this->units = config('dark-sky.units');
-    }
-
-    public function extend($blocks = 'hourly')
-    {
-        $this->extend = $blocks;
-
-        return $this;
+        $this->extend = config('dark-sky.extend');
     }
 
     public function lang($language)
@@ -36,6 +30,13 @@ class DarkSky
     public function units($units)
     {
         $this->units = $units;
+
+        return $this;
+    }
+
+    public function extend($blocks = 'hourly')
+    {
+        $this->extend = $blocks;
 
         return $this;
     }
