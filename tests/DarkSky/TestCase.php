@@ -10,4 +10,15 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     {
         return [ServiceProvider::class];
     }
+
+    protected function resolveApplicationConfiguration($app)
+    {
+        $fixturePath = __DIR__ . '/fixture/config/dark-sky.php';
+        $orchestraPath = $this->getBasePath() . '/config/dark-sky.php';
+        copy($fixturePath, $orchestraPath);
+
+        parent::resolveApplicationConfiguration($app);
+
+        unlink($orchestraPath);
+    }
 }
