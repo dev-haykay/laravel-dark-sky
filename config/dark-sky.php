@@ -30,4 +30,17 @@ return [
 
     'extend' => null,
 
+    /*
+    |--------------------------------------------------------------------------
+    | Language
+    |--------------------------------------------------------------------------
+    |
+    | Use this option to set the language for returned `summary` properties.
+    | Units in the `summary` will be set according to the `units` option.
+    | Be sure to set both options appropriately in your configuration.
+    |
+    */
+
+    'lang' => 'en',
+
 ];
