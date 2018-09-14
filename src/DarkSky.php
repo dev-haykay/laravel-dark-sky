@@ -2,6 +2,8 @@
 
 namespace Illuminated\DarkSky;
 
+use GuzzleHttp\Client;
+
 class DarkSky
 {
     protected $latitude;
@@ -43,6 +45,16 @@ class DarkSky
         return $this;
     }
 
+    public function forecast($blocks = '*')
+    {
+        return $this->request($this->url(), $this->options($blocks));
+    }
+
+    protected function request($url, array $options)
+    {
+        return json_decode((new Client)->get($url, $options)->getBody(), true);
+    }
+
     protected function url($time = null)
     {
         $latitude = $this->latitude;
@@ -50,5 +62,31 @@ class DarkSky
         $uri = collect([$latitude, $longitude, $time])->filter()->implode(',');
 
         return "https://api.darksky.net/forecast/{$this->key}/{$uri}";
+    }
+
+    protected function options($blocks = '*')
+    {
+        return [
+            'query' => [
+                'lang' => $this->lang,
+                'units' => $this->units,
+                'extend' => $this->extend,
+                'exclude' => $this->exclude($blocks),
+            ],
+        ];
+    }
+
+    protected function exclude($included = '*')
+    {
+        $exclude = null;
+
+        $included = collect($included);
+        $all = collect(['currently', 'minutely', 'hourly', 'daily', 'alerts', 'flags']);
+
+        if ($all->intersect($included)->isNotEmpty()) {
+            $exclude = $all->diff($included)->implode(',');
+        }
+
+        return $exclude;
     }
 }
