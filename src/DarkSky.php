@@ -6,6 +6,7 @@ class DarkSky
 {
     protected $latitude;
     protected $longitude;
+    protected $key;
     protected $lang;
     protected $units;
     protected $extend;
@@ -15,6 +16,7 @@ class DarkSky
         $this->latitude = (float) $latitude;
         $this->longitude = (float) $longitude;
 
+        $this->key = config('dark-sky.key');
         $this->lang = config('dark-sky.lang');
         $this->units = config('dark-sky.units');
         $this->extend = config('dark-sky.extend');
@@ -43,12 +45,10 @@ class DarkSky
 
     protected function url($time = null)
     {
-        $key = config('dark-sky.key');
-
         $latitude = $this->latitude;
         $longitude = $this->longitude;
         $uri = collect([$latitude, $longitude, $time])->filter()->implode(',');
 
-        return "https://api.darksky.net/forecast/{$key}/{$uri}";
+        return "https://api.darksky.net/forecast/{$this->key}/{$uri}";
     }
 }
