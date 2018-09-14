@@ -49,4 +49,16 @@ class ForecastTest extends TestCase
         $this->assertArrayHasKey('daily', $forecast);
         $this->assertArrayHasKey('flags', $forecast);
     }
+
+    /** @test */
+    public function you_can_change_the_language_on_the_fly()
+    {
+        $forecastEn = (new DarkSky(46.4825, 30.7233))->lang('en')->forecast('daily');
+        $forecastRu = (new DarkSky(46.4825, 30.7233))->lang('ru')->forecast('daily');
+
+        $this->assertNotEquals(
+            $forecastEn['daily']['summary'],
+            $forecastRu['daily']['summary']
+        );
+    }
 }
