@@ -56,6 +56,6 @@ return [
     |
     */
 
-    'units' => 'auto',
+    'units' => 'us',
 
 ];
