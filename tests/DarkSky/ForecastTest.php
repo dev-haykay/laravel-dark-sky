@@ -63,12 +63,24 @@ class ForecastTest extends TestCase
     }
 
     /** @test */
-    public function you_can_change_units_on_the_fly()
+    public function you_can_change_the_units_on_the_fly()
     {
         $forecastUs = (new DarkSky(46.4825, 30.7233))->units('us')->forecast('flags');
         $forecastSi = (new DarkSky(46.4825, 30.7233))->units('si')->forecast('flags');
 
         $this->assertEquals('us', $forecastUs['flags']['units']);
         $this->assertEquals('si', $forecastSi['flags']['units']);
+    }
+
+    /** @test */
+    public function you_can_change_the_extend_on_the_fly()
+    {
+        $forecast = (new DarkSky(46.4825, 30.7233))->forecast('hourly');
+        $extended = (new DarkSky(46.4825, 30.7233))->extend()->forecast('hourly');
+
+        $this->assertNotEquals(
+            count($forecast['hourly']['data']),
+            count($extended['hourly']['data'])
+        );
     }
 }
