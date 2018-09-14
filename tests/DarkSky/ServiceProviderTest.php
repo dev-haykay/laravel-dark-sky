@@ -9,8 +9,8 @@ class ServiceProviderTest extends TestCase
     {
         $this->assertEquals([
             'key' => '43e427ceb504ec730f9cc258bab1a81d',
-            'extend' => 'hourly',
-            'lang' => 'ru',
+            'extend' => null,
+            'lang' => 'en',
             'units' => 'si',
         ], config('dark-sky'));
     }
