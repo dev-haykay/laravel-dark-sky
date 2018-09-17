@@ -140,4 +140,34 @@ class TimeMachineTest extends TestCase
         $this->assertArrayNotHasKey('currently', $weather['1987-05-11']);
         $this->assertArrayNotHasKey('hourly', $weather['1987-05-11']);
     }
+
+    /** @test */
+    public function you_can_change_the_language_on_the_fly()
+    {
+        $weatherEn = (new DarkSky(46.4825, 30.7233))->lang('en')->timeMachine(['1986-05-11', '1987-05-11'], 'daily');
+        $weatherRu = (new DarkSky(46.4825, 30.7233))->lang('ru')->timeMachine(['1986-05-11', '1987-05-11'], 'daily');
+
+        $this->assertNotEquals(
+            $weatherEn['1986-05-11']['daily']['data'][0]['summary'],
+            $weatherRu['1986-05-11']['daily']['data'][0]['summary']
+        );
+
+        $this->assertNotEquals(
+            $weatherEn['1987-05-11']['daily']['data'][0]['summary'],
+            $weatherRu['1987-05-11']['daily']['data'][0]['summary']
+        );
+    }
+
+    /** @test */
+    public function you_can_change_the_units_on_the_fly()
+    {
+        $weatherUs = (new DarkSky(46.4825, 30.7233))->units('us')->timeMachine(['1986-05-11', '1987-05-11'], 'flags');
+        $weatherSi = (new DarkSky(46.4825, 30.7233))->units('si')->timeMachine(['1986-05-11', '1987-05-11'], 'flags');
+
+        $this->assertEquals('us', $weatherUs['1986-05-11']['flags']['units']);
+        $this->assertEquals('us', $weatherUs['1987-05-11']['flags']['units']);
+
+        $this->assertEquals('si', $weatherSi['1986-05-11']['flags']['units']);
+        $this->assertEquals('si', $weatherSi['1987-05-11']['flags']['units']);
+    }
 }
