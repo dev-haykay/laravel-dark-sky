@@ -12,7 +12,8 @@
     "require": {
         "php": ">=7.0",
         "guzzlehttp/guzzle": "^6.3",
-        "illuminate/support": "5.5.*"
+        "illuminate/support": "5.5.*",
+        "nesbot/carbon": "^1.24.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0",
