@@ -71,4 +71,31 @@ class TimeMachineTest extends TestCase
         $this->assertArrayNotHasKey('currently', $weather);
         $this->assertArrayNotHasKey('hourly', $weather);
     }
+
+    /** @test */
+    public function you_can_pass_an_array_of_dates_for_time_machine_requests()
+    {
+        $weather = (new DarkSky(46.4825, 30.7233))->timeMachine(['1986-05-11', '1987-05-11', '1988-05-11']);
+
+        $this->assertCount(3, $weather);
+
+        $this->assertArrayHasKey('1986-05-11', $weather);
+        $this->assertArrayHasKey('1987-05-11', $weather);
+        $this->assertArrayHasKey('1988-05-11', $weather);
+
+        $this->assertArrayHasKey('currently', $weather['1986-05-11']);
+        $this->assertArrayHasKey('hourly', $weather['1986-05-11']);
+        $this->assertArrayHasKey('daily', $weather['1986-05-11']);
+        $this->assertArrayHasKey('flags', $weather['1986-05-11']);
+
+        $this->assertArrayHasKey('currently', $weather['1987-05-11']);
+        $this->assertArrayHasKey('hourly', $weather['1987-05-11']);
+        $this->assertArrayHasKey('daily', $weather['1987-05-11']);
+        $this->assertArrayHasKey('flags', $weather['1987-05-11']);
+
+        $this->assertArrayHasKey('currently', $weather['1988-05-11']);
+        $this->assertArrayHasKey('hourly', $weather['1988-05-11']);
+        $this->assertArrayHasKey('daily', $weather['1988-05-11']);
+        $this->assertArrayHasKey('flags', $weather['1988-05-11']);
+    }
 }
