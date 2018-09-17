@@ -103,6 +103,7 @@ class DarkSky
     protected function options($blocks = '*')
     {
         return [
+            'decode_content' => 'gzip',
             'query' => [
                 'lang' => $this->lang,
                 'units' => $this->units,
