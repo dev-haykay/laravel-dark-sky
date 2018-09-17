@@ -98,4 +98,46 @@ class TimeMachineTest extends TestCase
         $this->assertArrayHasKey('daily', $weather['1988-05-11']);
         $this->assertArrayHasKey('flags', $weather['1988-05-11']);
     }
+
+    /** @test */
+    public function when_array_passed_you_can_also_set_the_desired_response_block_as_a_string()
+    {
+        $weather = (new DarkSky(46.4825, 30.7233))->timeMachine(['1986-05-11', '1987-05-11'], 'daily');
+
+        $this->assertCount(2, $weather);
+
+        $this->assertArrayHasKey('1986-05-11', $weather);
+        $this->assertArrayHasKey('1987-05-11', $weather);
+
+        $this->assertArrayHasKey('daily', $weather['1986-05-11']);
+        $this->assertArrayNotHasKey('currently', $weather['1986-05-11']);
+        $this->assertArrayNotHasKey('hourly', $weather['1986-05-11']);
+        $this->assertArrayNotHasKey('flags', $weather['1986-05-11']);
+
+        $this->assertArrayHasKey('daily', $weather['1987-05-11']);
+        $this->assertArrayNotHasKey('currently', $weather['1987-05-11']);
+        $this->assertArrayNotHasKey('hourly', $weather['1987-05-11']);
+        $this->assertArrayNotHasKey('flags', $weather['1987-05-11']);
+    }
+
+    /** @test */
+    public function when_array_passed_you_can_also_set_the_desired_response_blocks_as_an_array()
+    {
+        $weather = (new DarkSky(46.4825, 30.7233))->timeMachine(['1986-05-11', '1987-05-11'], ['daily', 'flags']);
+
+        $this->assertCount(2, $weather);
+
+        $this->assertArrayHasKey('1986-05-11', $weather);
+        $this->assertArrayHasKey('1987-05-11', $weather);
+
+        $this->assertArrayHasKey('daily', $weather['1986-05-11']);
+        $this->assertArrayHasKey('flags', $weather['1986-05-11']);
+        $this->assertArrayNotHasKey('currently', $weather['1986-05-11']);
+        $this->assertArrayNotHasKey('hourly', $weather['1986-05-11']);
+
+        $this->assertArrayHasKey('daily', $weather['1987-05-11']);
+        $this->assertArrayHasKey('flags', $weather['1987-05-11']);
+        $this->assertArrayNotHasKey('currently', $weather['1987-05-11']);
+        $this->assertArrayNotHasKey('hourly', $weather['1987-05-11']);
+    }
 }
