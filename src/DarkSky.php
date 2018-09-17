@@ -2,6 +2,7 @@
 
 namespace Illuminated\DarkSky;
 
+use Carbon\Carbon;
 use GuzzleHttp\Client;
 
 class DarkSky
@@ -50,6 +51,15 @@ class DarkSky
         return $this->request($this->url(), $this->options($blocks));
     }
 
+    public function timeMachine($time, $blocks = '*')
+    {
+        if (is_array($time)) {
+            dd('concurrent requests');
+        }
+
+        return $this->request($this->url($time), $this->options($blocks));
+    }
+
     protected function request($url, array $options)
     {
         return json_decode((new Client)->get($url, $options)->getBody(), true);
@@ -59,9 +69,20 @@ class DarkSky
     {
         $latitude = $this->latitude;
         $longitude = $this->longitude;
-        $uri = collect([$latitude, $longitude, $time])->filter()->implode(',');
+        $uri = collect([$latitude, $longitude, $this->time($time)])->filter()->implode(',');
 
         return "https://api.darksky.net/forecast/{$this->key}/{$uri}";
+    }
+
+    protected function time($time = null)
+    {
+        if (is_null($time)) {
+            return null;
+        }
+
+        $method = is_int($time) ? 'createFromTimestampUTC' : 'parse';
+
+        return Carbon::{$method}($time)->format('Y-m-d\TH:i:s');
     }
 
     protected function options($blocks = '*')
