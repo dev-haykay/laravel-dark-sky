@@ -4,6 +4,8 @@ namespace Illuminated\DarkSky;
 
 use Carbon\Carbon;
 use GuzzleHttp\Client;
+use GuzzleHttp\Promise;
+use GuzzleHttp\Psr7\Response;
 
 class DarkSky
 {
@@ -57,12 +59,25 @@ class DarkSky
             return $this->request($this->url($time), $this->options($blocks));
         }
 
-        dd('concurrent requests');
+        return $this->concurrentRequests($time, $this->options($blocks));
     }
 
     protected function request($url, array $options)
     {
         return json_decode((new Client)->get($url, $options)->getBody(), true);
+    }
+
+    protected function concurrentRequests(array $times, array $options)
+    {
+        $client = new Client;
+
+        $promises = collect($times)->mapWithKeys(function ($time) use ($client, $options) {
+            return [$time => $client->getAsync($this->url($time), $options)];
+        });
+
+        return collect(Promise\unwrap($promises))->map(function (Response $response) {
+            return json_decode($response->getBody(), true);
+        })->toArray();
     }
 
     protected function url($time = null)
