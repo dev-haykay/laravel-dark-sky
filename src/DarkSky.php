@@ -53,11 +53,11 @@ class DarkSky
 
     public function timeMachine($time, $blocks = '*')
     {
-        if (is_array($time)) {
-            dd('concurrent requests');
+        if (!is_array($time)) {
+            return $this->request($this->url($time), $this->options($blocks));
         }
 
-        return $this->request($this->url($time), $this->options($blocks));
+        dd('concurrent requests');
     }
 
     protected function request($url, array $options)
