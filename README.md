@@ -103,7 +103,7 @@ $forecast = (new DarkSky($latitude, $longitude))->lang('ru')->forecast();
 ```
 
 ```php
-$weather = (new DarkSky($latitude, $longitude))->lang('ru')->timeMachine('1986-05-11');
+$weather  = (new DarkSky($latitude, $longitude))->lang('ru')->timeMachine('1986-05-11');
 ```
 
 ### Units
@@ -115,7 +115,7 @@ $forecast = (new DarkSky($latitude, $longitude))->units('si')->forecast();
 ```
 
 ```php
-$weather = (new DarkSky($latitude, $longitude))->units('si')->timeMachine('1986-05-11');
+$weather  = (new DarkSky($latitude, $longitude))->units('si')->timeMachine('1986-05-11');
 ```
 
 ## License
