@@ -58,11 +58,13 @@ Get the full forecast:
 $forecast = (new DarkSky($latitude, $longitude))->forecast();
 ```
 
-Or specify the desired data blocks:
+Request single data block:
 
 ```php
 $forecast = (new DarkSky($latitude, $longitude))->forecast('daily');
 ```
+
+Or request several data blocks:
 
 ```php
 $forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'flags']);
