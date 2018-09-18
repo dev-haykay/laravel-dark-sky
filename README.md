@@ -24,6 +24,7 @@
 - [Usage](#usage)
 - [Forecast Request](#forecast-request)
 - [Time Machine Request](#time-machine-request)
+- [Data blocks](#data-blocks)
 - [License](#license)
 
 ## Usage
@@ -70,6 +71,20 @@ Get the weather conditions for several particular dates, concurrent requests use
 
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11']);
+```
+
+## Data blocks
+
+Get only required data from API:
+
+```php
+$forecast = (new DarkSky($latitude, $longitude))->forecast('daily');
+$forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'hourly']);
+```
+
+```php
+$weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', 'daily');
+$weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['daily', 'hourly']);
 ```
 
 ## License
