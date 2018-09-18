@@ -53,34 +53,28 @@
 
 ## Forecast Request
 
-Get the full forecast, single or several data blocks:
+Get the weather forecast:
 
 ```php
 $forecast = (new DarkSky($latitude, $longitude))->forecast();
-$forecast = (new DarkSky($latitude, $longitude))->forecast('daily');
-$forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'hourly']);
 ```
 
 ## Time Machine Request
 
-Get the full weather conditions, single or several data blocks for a particular date:
+Get the weather conditions for a particular date:
 
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11');
-$weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', 'daily');
-$weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['daily', 'hourly']);
 ```
 
 ### Multiple requests
 
-> Sent concurrently for better performance. Cool, yeah?
+> Sent concurrently for better performance.
 
-Get the full weather conditions, single or several data blocks for a several dates:
+Get the weather conditions for a several dates:
 
 ```php
-$weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11']);
-$weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11'], 'daily');
-$weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11'], ['daily', 'hourly']);
+$weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11', '1988-05-11']);
 ```
 
 ## License
