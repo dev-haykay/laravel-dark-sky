@@ -24,7 +24,6 @@
 - [Usage](#usage)
 - [Forecast Request](#forecast-request)
 - [Time Machine Request](#time-machine-request)
-  - [Multiple requests](#multiple-requests)
 - [License](#license)
 
 ## Usage
@@ -67,11 +66,7 @@ Get the weather conditions for a particular date:
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11');
 ```
 
-### Multiple requests
-
-> Sent concurrently for better performance.
-
-Get the weather conditions for a several particular dates:
+Get the weather conditions for a several particular dates (concurrent requests):
 
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11']);
