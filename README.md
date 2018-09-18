@@ -53,41 +53,21 @@
 
 ## Forecast Request
 
-Get the full forecast:
+Get the full forecast, single or several data blocks:
 
 ```php
 $forecast = (new DarkSky($latitude, $longitude))->forecast();
-```
-
-Request single data block:
-
-```php
 $forecast = (new DarkSky($latitude, $longitude))->forecast('daily');
-```
-
-Or request several data blocks:
-
-```php
 $forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'hourly']);
 ```
 
 ## Time Machine Request
 
-Weather conditions for a particular date:
+Get the full weather conditions, single or several data blocks for a particular date:
 
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11');
-```
-
-Request single data block for a particular date:
-
-```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', 'daily');
-```
-
-Or request several data blocks for a particular date:
-
-```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['daily', 'hourly']);
 ```
 
@@ -95,21 +75,11 @@ $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['dai
 
 > Multiple requests are sent concurrently for better performance.
 
-Weather conditions for several dates:
+Get the full weather conditions, single or several data blocks for a several dates:
 
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11']);
-```
-
-Request single data block for several dates:
-
-```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11'], 'daily');
-```
-
-Or request several data blocks for several dates:
-
-```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11'], ['daily', 'hourly']);
 ```
 
