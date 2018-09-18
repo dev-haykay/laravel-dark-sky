@@ -75,10 +75,10 @@ $forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'hourly']);
 Weather conditions for a particular date:
 
 ```php
-$weather = (new DarkSky($latitude, $longitude))->timeMachine('previous Monday');
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11');
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11 15:30:00');
 $weather = (new DarkSky($latitude, $longitude))->timeMachine(strtotime('1986-05-11'));
+$weather = (new DarkSky($latitude, $longitude))->timeMachine('first Monday of September 2018');
 ```
 
 ## License
