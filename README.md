@@ -24,7 +24,7 @@
 - [Usage](#usage)
 - [Forecast Request](#forecast-request)
 - [Time Machine Request](#time-machine-request)
-  - [Concurrent requests](#concurrent-requests)
+  - [Multiple requests](#multiple-requests)
 - [License](#license)
 
 ## Usage
@@ -91,7 +91,7 @@ Or request several data blocks for a particular date:
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['daily', 'hourly']);
 ```
 
-### Concurrent requests
+### Multiple requests
 
 // ...
 
