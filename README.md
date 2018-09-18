@@ -71,10 +71,10 @@ $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11');
 
 > Sent concurrently for better performance.
 
-Get the weather conditions for a several dates:
+Get the weather conditions for a several particular dates:
 
 ```php
-$weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11', '1988-05-11']);
+$weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11']);
 ```
 
 ## License
