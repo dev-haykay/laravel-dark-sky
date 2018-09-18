@@ -73,7 +73,7 @@ $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['dai
 
 ### Multiple requests
 
-> Multiple requests are sent concurrently for better performance.
+> Sent concurrently for better performance. Cool, yeah?
 
 Get the full weather conditions, single or several data blocks for a several dates:
 
