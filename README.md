@@ -24,6 +24,9 @@
 - [Usage](#usage)
 - [Forecast Request](#forecast-request)
 - [Time Machine Request](#time-machine-request)
+  - [Time](#time)
+  - [Data blocks](#data-blocks)
+  - [Concurrent requests](#concurrent-requests)
 - [License](#license)
 
 ## Usage
@@ -72,13 +75,21 @@ $forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'hourly']);
 
 ## Time Machine Request
 
+### Time
+
+The time point can be represented by:
+
+- Date string, `1986-05-11`;
+- Datetime string, `1986-05-11 15:30:00`;
+- UNIX timestamp, `516153600`;
+- String (powered by [Carbon](https://carbon.nesbot.com/docs/)), `first Monday of September 2018`;
+
+### Data blocks
+
 Weather conditions for a particular date:
 
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11');
-$weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11 15:30:00');
-$weather = (new DarkSky($latitude, $longitude))->timeMachine(strtotime('1986-05-11'));
-$weather = (new DarkSky($latitude, $longitude))->timeMachine('first Monday of September 2018');
 ```
 
 Request single data block for a particular date:
@@ -92,6 +103,10 @@ Or request several data blocks for a particular date:
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['daily', 'hourly']);
 ```
+
+### Concurrent requests
+
+// ...
 
 ## License
 
