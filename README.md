@@ -46,7 +46,7 @@
     $forecast = (new DarkSky($latitude, $longitude))->forecast();
     ```
 
-    Check [Dark Sky API](https://darksky.net/dev/docs) for more information about the response format.
+    Check [Dark Sky API](https://darksky.net/dev/docs) for more information about response format.
 
 ## License
 
