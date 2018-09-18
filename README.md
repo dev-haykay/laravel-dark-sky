@@ -87,7 +87,7 @@ $forecast = (new DarkSky($latitude, $longitude))->forecast('daily');
 $forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'hourly']);
 ```
 
-The same is true for the Time Machine Requests too:
+Use the same syntax for the Time Machine Requests:
 
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', 'daily');
