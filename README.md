@@ -32,7 +32,7 @@
     composer require illuminated/dark-sky
     ```
 
-2. Set `DARK_SKY_KEY` in `.env` file:
+2. Set your key in `.env` file:
 
     ```
     DARK_SKY_KEY=[Your Secret Key]
