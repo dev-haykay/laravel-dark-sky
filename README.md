@@ -26,6 +26,8 @@
 - [Time Machine Request](#time-machine-request)
 - [Customizing requests](#customizing-requests)
   - [Blocks](#blocks)
+  - [Language](#language)
+  - [Units](#units)
 - [License](#license)
 
 ## Usage
@@ -88,6 +90,22 @@ $forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'hourly']);
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', 'daily');
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['daily', 'hourly']);
+```
+
+### Language
+
+Change the language on the fly (or by using [config](#configuration)):
+
+```php
+$forecast = (new DarkSky($latitude, $longitude))->lang('ru')->forecast();
+```
+
+### Units
+
+Change the units on the fly (or by using [config](#configuration)):
+
+```php
+$forecast = (new DarkSky($latitude, $longitude))->units('si')->forecast();
 ```
 
 ## License
