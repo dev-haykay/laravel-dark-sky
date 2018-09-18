@@ -52,7 +52,21 @@
 
 ## Forecast Request
 
-// ...
+Get the full forecast:
+
+```php
+$forecast = (new DarkSky($latitude, $longitude))->forecast();
+```
+
+Or specify the desired data blocks:
+
+```php
+$forecast = (new DarkSky($latitude, $longitude))->forecast('daily');
+```
+
+```php
+$forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'flags']);
+```
 
 ## Time Machine Request
 
