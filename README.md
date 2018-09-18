@@ -26,7 +26,7 @@
 
 ## Usage
 
-1. Install the package:
+1. Install the package via Composer:
 
     ```shell
     composer require illuminated/dark-sky
