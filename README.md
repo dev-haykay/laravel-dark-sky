@@ -70,7 +70,7 @@ Get the weather conditions for a particular date:
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11');
 ```
 
-Get the weather conditions for several particular dates, concurrent requests used:
+Or get the weather conditions for several particular dates, concurrent requests used:
 
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11']);
@@ -87,6 +87,8 @@ $forecast = (new DarkSky($latitude, $longitude))->forecast('daily');
 $forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'hourly']);
 ```
 
+The same is true for the Time Machine Requests too:
+
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', 'daily');
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['daily', 'hourly']);
@@ -94,7 +96,7 @@ $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['dai
 
 ### Language
 
-Change the language on the fly (or by using [config](#configuration)):
+Change the language for `summary` response properties:
 
 ```php
 $forecast = (new DarkSky($latitude, $longitude))->lang('ru')->forecast();
@@ -102,7 +104,7 @@ $forecast = (new DarkSky($latitude, $longitude))->lang('ru')->forecast();
 
 ### Units
 
-Change the units on the fly (or by using [config](#configuration)):
+Change the units for the response weather conditions:
 
 ```php
 $forecast = (new DarkSky($latitude, $longitude))->units('si')->forecast();
