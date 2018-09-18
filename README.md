@@ -46,6 +46,8 @@
     $forecast = (new DarkSky($latitude, $longitude))->forecast();
     ```
 
+    Check the [Dark Sky API](https://darksky.net/dev/docs) to know more about response format.
+
 ## License
 
 The MIT License. Please see [License File](LICENSE) for more information.
