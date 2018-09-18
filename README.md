@@ -67,7 +67,7 @@ $forecast = (new DarkSky($latitude, $longitude))->forecast('daily');
 Or request several data blocks:
 
 ```php
-$forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'flags']);
+$forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'hourly']);
 ```
 
 ## Time Machine Request
