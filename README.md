@@ -24,7 +24,7 @@
 - [Usage](#usage)
 - [Forecast Request](#forecast-request)
 - [Time Machine Request](#time-machine-request)
-  - [Time](#time)
+  - [Formats](#formats)
   - [Data blocks](#data-blocks)
   - [Concurrent requests](#concurrent-requests)
 - [License](#license)
@@ -75,9 +75,7 @@ $forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'hourly']);
 
 ## Time Machine Request
 
-### Time
-
-The time point can be represented by:
+### Formats
 
 - Date string, `1986-05-11`;
 - Datetime string, `1986-05-11 15:30:00`;
