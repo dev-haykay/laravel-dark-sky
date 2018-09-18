@@ -76,9 +76,6 @@ Weather conditions for a particular date:
 
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11');
-$weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11 15:30:00');
-$weather = (new DarkSky($latitude, $longitude))->timeMachine(strtotime('1986-05-11'));
-$weather = (new DarkSky($latitude, $longitude))->timeMachine('first Monday of September 2018');
 ```
 
 Request single data block for a particular date:
@@ -92,6 +89,13 @@ Or request several data blocks for a particular date:
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['daily', 'hourly']);
 ```
+
+Date for the Time Machine Request can be:
+
+- Date string, `1986-05-11`;
+- Datetime string, `1986-05-11 15:30:00`;
+- UNIX timestamp, `516153600`;
+- Human readable string, `first Monday of September 2018`;
 
 ## License
 
