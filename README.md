@@ -57,8 +57,8 @@ Get the full forecast, single or several data blocks:
 
 ```php
 $forecast = (new DarkSky($latitude, $longitude))->forecast();
-//                                              ->forecast('daily');
-//                                              ->forecast(['daily', 'hourly']);
+$forecast = (new DarkSky($latitude, $longitude))->forecast('daily');
+$forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'hourly']);
 ```
 
 ## Time Machine Request
