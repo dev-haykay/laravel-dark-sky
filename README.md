@@ -22,8 +22,8 @@
 ## Table of contents
 
 - [Usage](#usage)
-- [Forecast request](#forecast-request)
-- [Time machine request](#time-machine-request)
+- [Forecast Request](#forecast-request)
+- [Time Machine Request](#time-machine-request)
 - [License](#license)
 
 ## Usage
@@ -50,11 +50,11 @@
 
     Check [Dark Sky API](https://darksky.net/dev/docs) for more information about response format.
 
-## Forecast request
+## Forecast Request
 
 // ...
 
-## Time machine request
+## Time Machine Request
 
 // ...
 
