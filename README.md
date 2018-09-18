@@ -18,3 +18,30 @@
 | 5.5.*   | [5.5.*](https://github.com/dmitry-ivanov/laravel-dark-sky/tree/5.5) |
 | 5.6.*   | [5.6.*](https://github.com/dmitry-ivanov/laravel-dark-sky/tree/5.6) |
 | 5.7.*   | [5.7.*](https://github.com/dmitry-ivanov/laravel-dark-sky/tree/5.7) |
+
+## Table of contents
+
+- [Usage](#usage)
+- [License](#license)
+
+## Usage
+
+1. Install package through `composer`:
+
+    ```shell
+    composer require illuminated/dark-sky
+    ```
+
+2. Use `DarkSky` class:
+
+    ```php
+    use DarkSky;
+
+    $forecast = (new DarkSky($latitude, $longitude))->forecast();
+    ```
+
+## License
+
+The MIT License. Please see [License File](LICENSE) for more information.
+
+[<img src="https://user-images.githubusercontent.com/1286821/43086829-ff7c006e-8ea6-11e8-8b03-ecf97ca95b2e.png" alt="Support on Patreon" width="125" />](https://www.patreon.com/illuminated)
