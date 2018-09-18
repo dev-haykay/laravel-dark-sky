@@ -29,6 +29,9 @@
   - [Language](#language)
   - [Units](#units)
   - [Extend](#extend)
+- [Advanced](#advanced)
+  - [Configuration](#configuration)
+  - [Caching, caching, caching!](#caching-caching-caching)
 - [License](#license)
 
 ## Usage
@@ -125,6 +128,28 @@ Get hour-by-hour forecast data for the next 168 hours, instead of the next 48:
 
 ```php
 $forecast = (new DarkSky($latitude, $longitude))->extend()->forecast();
+```
+
+## Advanced
+
+### Configuration
+
+You can publish config to override default language, units, etc:
+
+```shell
+php artisan vendor:publish --provider="Illuminated\DarkSky\ServiceProvider"
+```
+
+### Caching, caching, caching!
+
+> Each time you get the weather - you do the real API calls!
+
+Use caching to increase your application speed and reduce API load:
+
+```php
+$forecast = Cache::remember($key, $minutes, function () {
+    return (new DarkSky($latitude, $longitude))->forecast();
+});
 ```
 
 ## License
