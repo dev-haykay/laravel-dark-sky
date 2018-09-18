@@ -32,7 +32,13 @@
     composer require illuminated/dark-sky
     ```
 
-2. Use `DarkSky` class:
+2. Set `DARK_SKY_KEY` in `.env` file:
+
+    ```
+    DARK_SKY_KEY=[Your Secret Key]
+    ```
+
+3. Use `DarkSky` class:
 
     ```php
     use DarkSky;
