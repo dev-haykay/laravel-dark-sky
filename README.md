@@ -24,7 +24,8 @@
 - [Usage](#usage)
 - [Forecast Request](#forecast-request)
 - [Time Machine Request](#time-machine-request)
-- [Data blocks](#data-blocks)
+- [Customizing requests](#customizing-requests)
+  - [Blocks](#blocks)
 - [License](#license)
 
 ## Usage
@@ -73,7 +74,9 @@ Get the weather conditions for several particular dates, concurrent requests use
 $weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11']);
 ```
 
-## Data blocks
+## Customizing requests
+
+### Blocks
 
 Get only required data from API:
 
