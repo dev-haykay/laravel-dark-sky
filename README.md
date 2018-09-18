@@ -81,6 +81,18 @@ $weather = (new DarkSky($latitude, $longitude))->timeMachine(strtotime('1986-05-
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('first Monday of September 2018');
 ```
 
+Request single data block for a particular date:
+
+```php
+$weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', 'daily');
+```
+
+Or request several data blocks for a particular date:
+
+```php
+$weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['daily', 'hourly']);
+```
+
 ## License
 
 The MIT License. Please see [License File](LICENSE) for more information.
