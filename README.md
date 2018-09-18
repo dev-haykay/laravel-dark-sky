@@ -98,19 +98,19 @@ $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['dai
 Weather conditions for several dates:
 
 ```php
-$weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11', '1988-05-11']);
+$weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11']);
 ```
 
 Request single data block for several dates:
 
 ```php
-$weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11', '1988-05-11'], 'daily');
+$weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11'], 'daily');
 ```
 
 Or request several data blocks for several dates:
 
 ```php
-$weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11', '1988-05-11'], ['daily', 'hourly']);
+$weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11'], ['daily', 'hourly']);
 ```
 
 ## License
