@@ -28,6 +28,7 @@
   - [Blocks](#blocks)
   - [Language](#language)
   - [Units](#units)
+  - [Extend](#extend)
 - [License](#license)
 
 ## Usage
@@ -116,6 +117,14 @@ $forecast = (new DarkSky($latitude, $longitude))->units('si')->forecast();
 
 ```php
 $weather  = (new DarkSky($latitude, $longitude))->units('si')->timeMachine('1986-05-11');
+```
+
+### Extend
+
+Get hour-by-hour forecast data for the next 168 hours, instead of the next 48:
+
+```php
+$forecast = (new DarkSky($latitude, $longitude))->extend()->forecast();
 ```
 
 ## License
