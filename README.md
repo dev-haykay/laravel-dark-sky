@@ -11,7 +11,7 @@
 [![Total Downloads](https://poser.pugx.org/illuminated/dark-sky/downloads)](https://packagist.org/packages/illuminated/dark-sky)
 [![License](https://poser.pugx.org/illuminated/dark-sky/license)](https://packagist.org/packages/illuminated/dark-sky)
 
-Dark Sky weather forecast for Laravel.
+[Dark Sky](https://darksky.net/dev) weather forecast for Laravel.
 
 | Laravel | Dark Sky                                                            |
 | ------- | :-----------------------------------------------------------------: |
