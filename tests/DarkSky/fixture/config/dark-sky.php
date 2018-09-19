@@ -13,8 +13,7 @@ return [
     |
     */
 
-    // 'key' => env('DARK_SKY_KEY', '43e427ceb504ec730f9cc258bab1a81d'),
-    'key' => env('DARK_SKY_KEY', null),
+    'key' => env('DARK_SKY_KEY', '43e427ceb504ec730f9cc258bab1a81d'),
 
     /*
     |--------------------------------------------------------------------------
