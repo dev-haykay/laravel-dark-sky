@@ -121,7 +121,7 @@ $weather  = (new DarkSky($latitude, $longitude))->units('si')->timeMachine('1986
 
 ### Extend
 
-Extend hour-by-hour forecast data to the next 168 hours, instead of the next 48:
+Extend hour-by-hour forecast to the next 168 hours, instead of the next 48:
 
 ```php
 $forecast = (new DarkSky($latitude, $longitude))->extend()->forecast();
