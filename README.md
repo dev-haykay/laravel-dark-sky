@@ -22,8 +22,8 @@
 ## Table of contents
 
 - [Usage](#usage)
-- [Forecast Request](#forecast-request)
-- [Time Machine Request](#time-machine-request)
+- [Forecast](#forecast)
+- [Time Machine](#time-machine)
 - [Customizing Requests](#customizing-requests)
   - [Blocks](#blocks)
   - [Language](#language)
@@ -58,7 +58,7 @@
 
     Check [Dark Sky API](https://darksky.net/dev/docs) for more information about response format.
 
-## Forecast Request
+## Forecast
 
 Get the weather forecast:
 
@@ -66,7 +66,7 @@ Get the weather forecast:
 $forecast = (new DarkSky($latitude, $longitude))->forecast();
 ```
 
-## Time Machine Request
+## Time Machine
 
 Get the weather conditions for a particular date:
 
