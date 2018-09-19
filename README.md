@@ -2,9 +2,9 @@
 
 [<img src="https://user-images.githubusercontent.com/1286821/43083932-4915853a-8ea0-11e8-8983-db9e0f04e772.png" alt="Become a Patron" width="160" />](https://www.patreon.com/illuminated)
 
-[![StyleCI](https://github.styleci.io/repos/148543382/shield?branch=master&style=flat)](https://github.styleci.io/repos/148543382)
-[![Build Status](https://travis-ci.com/dmitry-ivanov/laravel-dark-sky.svg?branch=master)](https://travis-ci.com/dmitry-ivanov/laravel-dark-sky)
-[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-dark-sky/badge.svg?branch=master)](https://coveralls.io/github/dmitry-ivanov/laravel-dark-sky?branch=master)
+[![StyleCI](https://github.styleci.io/repos/148543382/shield?branch=5.6&style=flat)](https://github.styleci.io/repos/148543382)
+[![Build Status](https://travis-ci.com/dmitry-ivanov/laravel-dark-sky.svg?branch=5.6)](https://travis-ci.com/dmitry-ivanov/laravel-dark-sky)
+[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-dark-sky/badge.svg?branch=5.6)](https://coveralls.io/github/dmitry-ivanov/laravel-dark-sky?branch=5.6)
 
 [![Latest Stable Version](https://poser.pugx.org/illuminated/dark-sky/v/stable)](https://packagist.org/packages/illuminated/dark-sky)
 [![Latest Unstable Version](https://poser.pugx.org/illuminated/dark-sky/v/unstable)](https://packagist.org/packages/illuminated/dark-sky)
@@ -38,7 +38,7 @@
 1. Install the package via Composer:
 
     ```shell
-    composer require illuminated/dark-sky
+    composer require "illuminated/dark-sky:5.6.*"
     ```
 
 2. Set the key in the `.env` file:
