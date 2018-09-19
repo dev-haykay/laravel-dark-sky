@@ -141,7 +141,7 @@ php artisan vendor:publish --provider="Illuminated\DarkSky\ServiceProvider"
 
 > Each time you get the weather - you do the real API calls!
 
-Use caching to increase your application speed and reduce API load:
+Use caching to improve your application speed and reduce API load:
 
 ```php
 $forecast = Cache::remember($key, $minutes, function () {
