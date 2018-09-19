@@ -97,7 +97,7 @@ $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['dai
 
 ### Language
 
-Change the language for `summary` response properties:
+Change the language of response properties:
 
 ```php
 $forecast = (new DarkSky($latitude, $longitude))->lang('ru')->forecast();
@@ -109,7 +109,7 @@ $weather  = (new DarkSky($latitude, $longitude))->lang('ru')->timeMachine('1986-
 
 ### Units
 
-Change the units for the response weather conditions:
+Change the units of response weather conditions:
 
 ```php
 $forecast = (new DarkSky($latitude, $longitude))->units('si')->forecast();
@@ -121,7 +121,7 @@ $weather  = (new DarkSky($latitude, $longitude))->units('si')->timeMachine('1986
 
 ### Extend
 
-Get hour-by-hour forecast data for the next 168 hours, instead of the next 48:
+Extend hour-by-hour forecast data to the next 168 hours, instead of the next 48:
 
 ```php
 $forecast = (new DarkSky($latitude, $longitude))->extend()->forecast();
