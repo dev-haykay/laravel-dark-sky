@@ -25,7 +25,6 @@
 - [Forecast](#forecast)
 - [Time Machine](#time-machine)
 - [Customization](#customization)
-  - [Blocks](#blocks)
   - [Language](#language)
   - [Units](#units)
   - [Extend](#extend)
@@ -66,6 +65,13 @@ Get the weather forecast:
 $forecast = (new DarkSky($latitude, $longitude))->forecast();
 ```
 
+Reduce the response size by specifying desired data blocks:
+
+```php
+$forecast = (new DarkSky($latitude, $longitude))->forecast('daily');
+$forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'hourly']);
+```
+
 ## Time Machine
 
 Get the weather conditions for a particular date:
@@ -80,23 +86,14 @@ Or get the weather conditions for several particular dates, concurrent requests 
 $weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11']);
 ```
 
-## Customization
-
-### Blocks
-
-Get only required data from API:
-
-```php
-$forecast = (new DarkSky($latitude, $longitude))->forecast('daily');
-$forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'hourly']);
-```
-
-Use the same syntax for the Time Machine Requests:
+Reduce the response size by specifying desired data blocks:
 
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', 'daily');
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['daily', 'hourly']);
 ```
+
+## Customization
 
 ### Language
 
