@@ -80,7 +80,7 @@ Get the weather conditions for a particular date:
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11');
 ```
 
-Or get the weather conditions for several particular dates, concurrent requests used:
+Or get the weather conditions for several dates via [concurrent requests](http://docs.guzzlephp.org/en/stable/quickstart.html#concurrent-requests):
 
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11']);
