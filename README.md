@@ -24,7 +24,7 @@
 - [Usage](#usage)
 - [Forecast](#forecast)
 - [Time Machine](#time-machine)
-- [Customizing Requests](#customizing-requests)
+- [Customization](#customization)
   - [Blocks](#blocks)
   - [Language](#language)
   - [Units](#units)
@@ -80,7 +80,7 @@ Or get the weather conditions for several particular dates, concurrent requests 
 $weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11']);
 ```
 
-## Customizing Requests
+## Customization
 
 ### Blocks
 
