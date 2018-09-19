@@ -65,7 +65,7 @@ Get the weather forecast:
 $forecast = (new DarkSky($latitude, $longitude))->forecast();
 ```
 
-Reduce the response size by specifying desired data blocks:
+Specify desired data blocks to reduce response size:
 
 ```php
 $forecast = (new DarkSky($latitude, $longitude))->forecast('daily');
@@ -86,7 +86,7 @@ Or get the weather conditions for several dates via [concurrent requests](http:/
 $weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11']);
 ```
 
-Reduce the response size by specifying desired data blocks:
+Specify desired data blocks to reduce response size:
 
 ```php
 $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', 'daily');
