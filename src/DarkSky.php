@@ -27,6 +27,11 @@ class DarkSky
         $this->extend = config('dark-sky.extend');
     }
 
+    public static function at($latitude, $longitude)
+    {
+        return new self($latitude, $longitude);
+    }
+
     public function lang($lang)
     {
         $this->lang = $lang;
