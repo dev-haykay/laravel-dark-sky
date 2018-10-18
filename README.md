@@ -52,7 +52,7 @@
     ```php
     use DarkSky;
 
-    $forecast = (new DarkSky($latitude, $longitude))->forecast();
+    $forecast = DarkSky::at($latitude, $longitude)->forecast();
     ```
 
     > Check the [Dark Sky API](https://darksky.net/dev/docs) for more information about the response format.
@@ -64,14 +64,14 @@
 Get the weather forecast:
 
 ```php
-$forecast = (new DarkSky($latitude, $longitude))->forecast();
+$forecast = DarkSky::at($latitude, $longitude)->forecast();
 ```
 
 Specify desired data blocks to reduce the response size:
 
 ```php
-$forecast = (new DarkSky($latitude, $longitude))->forecast('daily');
-$forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'hourly']);
+$forecast = DarkSky::at($latitude, $longitude)->forecast('daily');
+$forecast = DarkSky::at($latitude, $longitude)->forecast(['daily', 'hourly']);
 ```
 
 ## Time Machine
@@ -79,20 +79,20 @@ $forecast = (new DarkSky($latitude, $longitude))->forecast(['daily', 'hourly']);
 Get the weather conditions for a particular date:
 
 ```php
-$weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11');
+$weather = DarkSky::at($latitude, $longitude)->timeMachine('1986-05-11');
 ```
 
 Or get the weather conditions for several dates via [concurrent requests](http://docs.guzzlephp.org/en/stable/quickstart.html#concurrent-requests):
 
 ```php
-$weather = (new DarkSky($latitude, $longitude))->timeMachine(['1986-05-11', '1987-05-11']);
+$weather = DarkSky::at($latitude, $longitude)->timeMachine(['1986-05-11', '1987-05-11']);
 ```
 
 Specify desired data blocks to reduce the response size:
 
 ```php
-$weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', 'daily');
-$weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['daily', 'hourly']);
+$weather = DarkSky::at($latitude, $longitude)->timeMachine('1986-05-11', 'daily');
+$weather = DarkSky::at($latitude, $longitude)->timeMachine('1986-05-11', ['daily', 'hourly']);
 ```
 
 ## Customization
@@ -102,11 +102,11 @@ $weather = (new DarkSky($latitude, $longitude))->timeMachine('1986-05-11', ['dai
 Change the language of response properties:
 
 ```php
-$forecast = (new DarkSky($latitude, $longitude))->lang('ru')->forecast();
+$forecast = DarkSky::at($latitude, $longitude)->lang('ru')->forecast();
 ```
 
 ```php
-$weather  = (new DarkSky($latitude, $longitude))->lang('ru')->timeMachine('1986-05-11');
+$weather  = DarkSky::at($latitude, $longitude)->lang('ru')->timeMachine('1986-05-11');
 ```
 
 ### Units
@@ -114,11 +114,11 @@ $weather  = (new DarkSky($latitude, $longitude))->lang('ru')->timeMachine('1986-
 Change the units of response weather conditions:
 
 ```php
-$forecast = (new DarkSky($latitude, $longitude))->units('si')->forecast();
+$forecast = DarkSky::at($latitude, $longitude)->units('si')->forecast();
 ```
 
 ```php
-$weather  = (new DarkSky($latitude, $longitude))->units('si')->timeMachine('1986-05-11');
+$weather  = DarkSky::at($latitude, $longitude)->units('si')->timeMachine('1986-05-11');
 ```
 
 ### Extend
@@ -126,7 +126,7 @@ $weather  = (new DarkSky($latitude, $longitude))->units('si')->timeMachine('1986
 Extend hour-by-hour forecast to the next 168 hours, instead of the next 48:
 
 ```php
-$forecast = (new DarkSky($latitude, $longitude))->extend()->forecast();
+$forecast = DarkSky::at($latitude, $longitude)->extend()->forecast();
 ```
 
 ## Advanced
@@ -147,7 +147,7 @@ Use caching to improve your application speed and reduce API load:
 
 ```php
 $forecast = Cache::remember($key, $minutes, function () {
-    return (new DarkSky($latitude, $longitude))->forecast();
+    return DarkSky::at($latitude, $longitude)->forecast();
 });
 ```
 
